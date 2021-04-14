@@ -7,11 +7,15 @@ const scpSchema= new mongoose.Schema(
         staffName:{type:String},
         staffCPR:{type:String},
         staffMobilno:{type:String},
-        staffJoiningdate:{type:String}
+        staffJoiningdate:{type:String},
+        passportNo:{type:String},
+        passportExpirydate:{type:String},
+        visaExpirydate:{type:String}
+        
     }
 )
 
-const scpSchemaUser=new mongoose.Schema(
+var schemaUser=new mongoose.Schema(
     {
         userName:{type:String},
         userPassword:{type:String},
@@ -20,8 +24,8 @@ const scpSchemaUser=new mongoose.Schema(
     }
 )
 
-const secureModel=mongoose.model('secures',scpSchema);
-const userModel=mongoose.model('users',scpSchemaUser);
+var secureModel=mongoose.model('secures',scpSchema);
+var userModel=mongoose.model('users',schemaUser);
 
-module.exports={secureModel};
-module.exports={userModel};
+module.exports={secureModel},{userModel};
+//module.exports={userModel};
